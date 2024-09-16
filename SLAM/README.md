@@ -14,7 +14,7 @@ ros2 launch bringup bringup.launch.py
 sudo apt install ros-humble-slam-toolbox 
 ```
 
-#### Note: Change path_to_config to the actual path of the yaml file
+#### Note: Download the yaml file and change path_to_config to the actual path of the yaml file
 ```bash
 # To run Online Asynchronous SLAM (Host Machine) 
 ros2 launch slam_toolbox online_async_launch.py params_file:=path_to_config/mapper_params_online_async.yaml
