@@ -19,3 +19,11 @@ sudo apt install ros-humble-slam-toolbox
 # To run Online Asynchronous SLAM (Host Machine) 
 ros2 launch slam_toolbox online_async_launch.py params_file:=path_to_config/mapper_params_online_async.yaml
 ```
+
+
+
+Description: 
+Online Synchronous: Data processing is single thread and sequential. This is used when map quality is more important
+Online Asynchronous: Data process is multi-thread and different sensor data can come in at different frequency, used when real time localisation is more important  
+Localisation Mode: Map no longer generates, used to figure out robot position in the map
+
