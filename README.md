@@ -1,5 +1,4 @@
-# AMR_FYP
-This repository contains scripts for the AMR FYP. 
+This repository contains packages for my FYP on Autonomous Mobile Robots in Smart Factory
 
 Robot: Jetrover 
 
