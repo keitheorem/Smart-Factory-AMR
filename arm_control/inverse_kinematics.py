@@ -28,7 +28,7 @@ for i in range(0,5):
 
 board.bus_servo_set_position(5, [[1,servo_angle[1], [2,servo_angle[2]], [3,servo_angle[3]], [4,servo_angle[4]], [5,servo_angle[5]]])
 
-# To visualise virtually
+# # To visualise virtually
 # fig, ax = plot_utils.init_3d_figure()
 # my_chain.plot(servo_angle, ax, target=target_position)
 # plt.xlim(-0.5, 0.5)
