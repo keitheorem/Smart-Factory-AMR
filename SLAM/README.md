@@ -20,6 +20,11 @@ sudo apt install ros-humble-slam-toolbox
 ros2 launch slam_toolbox online_async_launch.py params_file:=path_to_config/mapper_params_online_async.yaml
 ```
 
+#### Visualise SLAM result (Download view_slam.rviz and change path)
+```bash
+ros2 run rviz2 rviz2 -d /path_to_file/view_slam.rviz
+```
+
 
 
 Description: 
