@@ -26,7 +26,11 @@ servo = [1,2,3,4,5]
 for i in range(0,5):
     servo_command[i] = int(500 - ((servo_angle[servo[i]]*500)/max_angle))
 
-board.bus_servo_set_position(5, [[1,servo_angle[1], [2,servo_angle[2]], [3,servo_angle[3]], [4,servo_angle[4]], [5,servo_angle[5]]])
+self.board.bus_servo_set_position(5, [[1,self.servo_command[1]],
+                                    [2,self.servo_command[2]],
+                                    [3,self.servo_command[3]],
+                                    [4,self.servo_command[4]],
+                                    [5,self.servo_command[5]]])
 
 # # To visualise virtually
 # fig, ax = plot_utils.init_3d_figure()
