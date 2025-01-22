@@ -1,3 +1,5 @@
+# Code implementation for section 3.3 of report 
+# Path Planning with A* Search Algorithm
 import math
 import matplotlib.pyplot as plt
 
