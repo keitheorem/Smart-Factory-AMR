@@ -3,8 +3,8 @@ import matplotlib.pyplot as plt
 
 class Node:
     def __init__(self, position, parent=None):
-        self.position = position  # (x, y) coordinates
-        self.parent = parent  # Parent node for path reconstruction
+        self.position = position  # (x, y) coordinates on 2D grid map 
+        self.parent = parent  
         self.g = 0  # Cost from start node to this node
         self.h = 0  # Heuristic cost to the goal
         self.f = 0  # Total cost (g + h)
@@ -13,7 +13,7 @@ class Node:
         return self.position == other.position
 
 def heuristic(a, b):
-    # Use Euclidean distance as the heuristic
+    # Use Euclidean distance as the heuristic (note, heuristic is subjective for each application, refer to FYP report for more details)
     return math.sqrt((a[0] - b[0]) ** 2 + (a[1] - b[1]) ** 2)
 
 def get_neighbors(node, grid):
@@ -31,7 +31,7 @@ def get_neighbors(node, grid):
 
     for d in directions:
         neighbor_pos = (node.position[0] + d[0], node.position[1] + d[1])
-        # Ensure neighbor is within bounds and not an obstacle
+        # Ensure that neighbour can be navigated to 
         if 0 <= neighbor_pos[0] < len(grid) and 0 <= neighbor_pos[1] < len(grid[0]):
             if grid[neighbor_pos[0]][neighbor_pos[1]] == 0:  # 0 indicates walkable space
                 neighbors.append((Node(neighbor_pos), d))
@@ -54,7 +54,7 @@ def A_Star_Search(grid, start, goal):
     closed_set = []
 
     while open_set:
-        # Find the node with the lowest f in the open set
+        # Find the node with the lowest f in the open set (algorithm optimize by finding lowest cost )
         current_node = open_set[0]
         for node in open_set:
             if node.f < current_node.f:
@@ -65,11 +65,11 @@ def A_Star_Search(grid, start, goal):
 
         print(current_node.position)
 
-        # Check if the goal has been reached
+        # Check if at goal state
         if current_node == goal_node:
             return reconstruct_path(current_node)
 
-        # Get neighbors
+        # Get neighbour nodes
         neighbors = get_neighbors(current_node, grid)
         for neighbor, direction in neighbors:
             if neighbor in closed_set:
@@ -94,7 +94,7 @@ def A_Star_Search(grid, start, goal):
                 neighbor.parent = current_node
                 open_set.append(neighbor)
 
-    # If we exit the loop, there is no path to the goal
+    # No goal found, return none 
     return None
 
 def visualize_grid(grid, path, start, goal):
@@ -117,7 +117,7 @@ def visualize_grid(grid, path, start, goal):
 
 # Example usage
 if __name__ == "__main__":
-    # 0 represents walkable space, 1 represents obstacles
+    # 0 represents walkable space, 1 represents obstacles (edit grids here to show different results)
     grid = [
         [0, 0, 0, 0, 0],
         [0, 1, 0, 0, 0],
