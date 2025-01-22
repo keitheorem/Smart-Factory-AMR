@@ -1,3 +1,6 @@
+# Code implementation for section 4.1 
+# Forward Kinematics
+
 import sympy as sp
 
 def forward_kinematics():
