@@ -1,3 +1,5 @@
+# Code implementation for section 4.2
+# Inverse Kinematics 
 import numpy as np
 
 def forward_kinematics(joint_angles, link_lengths):
