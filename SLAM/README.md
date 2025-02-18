@@ -33,7 +33,7 @@ Online Synchronous: Data processing is single thread and sequential. This is use
 
 Online Asynchronous: Data process is multi-thread and different sensor data can come in at different frequency, used when real time localisation is more important  
 
-Life-Long Mapping: For large environment, to continue mapping from a given map and update with new sensor information
+Life-Long Mapping: For large environment, used to continue mapping from a given map and update with new sensor information
 
 Localisation Mode: Map no longer generates, used to figure out robot position in the map
 
